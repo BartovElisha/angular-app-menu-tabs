@@ -1,1 +1,6 @@
-<p>main works!</p>
+<div class="container mt-1">
+  <app-tabs (onTabClick)="selectTab($event)"></app-tabs>
+  <app-home *ngIf="selectedTab==='home'"></app-home>
+  <app-about *ngIf="selectedTab==='about'"></app-about>
+  <app-contactme *ngIf="selectedTab==='contactme'"></app-contactme>
+</div>

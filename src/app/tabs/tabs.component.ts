@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -8,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class TabsComponent implements OnInit {
 
   constructor() { }
+
+  selectedTab: string = 'home';
+
+  @Output() onTabClick = new EventEmitter<string>();
+
+  selectTab(tab:string) {
+    this.selectedTab = tab;
+    this.onTabClick.emit(tab);
+  }
 
   ngOnInit(): void {
   }

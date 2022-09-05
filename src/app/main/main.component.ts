@@ -9,6 +9,13 @@ export class MainComponent implements OnInit {
 
   constructor() { }
 
+  selectedTab:string = 'home';
+
+  selectTab(tab: string) {
+    this.selectedTab = tab;
+    console.log(`from tab: ${this.selectedTab}`);
+  }  
+
   ngOnInit(): void {
   }
 
